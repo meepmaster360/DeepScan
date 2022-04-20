@@ -3,6 +3,7 @@
 #Revision by: meepmaster
 #Date 20-04-2022
 
+
 #Variables
 TARGET="$1"
 USER_FILE="common_usernames.txt"
@@ -18,10 +19,15 @@ OKGREEN='\033[92m'
 OKORANGE='\033[93m'
 RESET='\e[0m'
 
+
+#Starting the process
 echo -e "$OKRED Scan away with DeepScan.$RESET"
 
 echo -e "$OKORANGE Usage ./DeepScan.sh target-ip-address or url ...$RESET"
 
+
+#Scannig to xml file, then grep the open ports
+#Explanation -sS   -sV  --open   -p-   -oX
 nmap -sS -T5 -sV -A --open -p- $TARGET -oX $TARGET.xml
 port_21=`grep 'portid="21"' $TARGET.xml | grep open`
 port_22=`grep 'portid="22"' $TARGET.xml | grep open`
