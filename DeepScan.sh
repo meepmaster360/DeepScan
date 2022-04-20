@@ -1,11 +1,17 @@
 #!/bin/bash
 #DeepScan v1.1
+#Revision by: meepmaster
+#Date 20-04-2022
+
+#Variables
 TARGET="$1"
 USER_FILE="common_usernames.txt"
 PASS_FILE="/usr/share/wordlists/metasploit/burnett_top_1024.txt"
 MIN_PASS="common_pass.txt"
 DIRB_DIR="/usr/share/dirbuster/wordlists/directory-list-1.0.txt"
 SNMP_STRINGS="/usr/share/seclists/Miscellaneous/wordlist-common-snmp-community-strings.txt"
+
+#Colors
 OKBLUE='\033[94m'
 OKRED='\033[91m'
 OKGREEN='\033[92m'
